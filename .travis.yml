@@ -19,7 +19,6 @@ addons:
       - python3
       - python3-pip
       - python3-setuptools
-      - flex
       - ruby
 
 jobs:
@@ -34,7 +33,7 @@ jobs:
       osx_image: xcode11.3
 
 script:
-  - ./scripts/travis-mac-install.sh
+  - source ./scripts/travis-mac-install.sh
   - ./contrib/setup-smt-switch.sh --with-msat --auto-yes
   - ./contrib/setup-btor2tools.sh
   - ./contrib/setup-bison.sh
