@@ -26,14 +26,14 @@ cd bison
 echo "In bison: `pwd`"
 ls ./
 echo "Try to create directory install"
-mkdir install
+mkdir bison-install
 ls ./
-./configure --prefix $DEPS/bison/install --exec-prefix $DEPS/bison/install
+./configure --prefix $DEPS/bison/bison-install --exec-prefix $DEPS/bison/bison-install
 make -j$(nproc)
 make install
 cd $DIR
 
-if [ ! -f "$DEPS/bison/install/bin/bison" ]; then
-    echo "It seems like installing bison to $DEPS/bison/install failed"
+if [ ! -f "$DEPS/bison/bison-install/bin/bison" ]; then
+    echo "It seems like installing bison to $DEPS/bison/bison-install failed"
     exit 1
 fi
