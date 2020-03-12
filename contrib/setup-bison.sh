@@ -23,7 +23,11 @@ tar -xf bison-3.5.tar.xz
 rm bison-3.5.tar.xz
 mv ./bison-3.5 ./bison
 cd bison
+echo "In bison: `pwd`"
+ls ./
+echo "Try to create directory install"
 mkdir install
+ls ./
 ./configure --prefix $DEPS/bison/install --exec-prefix $DEPS/bison/install
 make -j$(nproc)
 make install
